@@ -6,4 +6,5 @@
 
 core.xml
 core.lua
+code\greetings.lua
 code\shutUp.lua

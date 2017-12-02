@@ -1,0 +1,7 @@
+## Interface: 70300
+## Title: DSP Addon
+## Author: DSP
+## Version: 0.1
+
+greetings.lua
+shutUp.lua

@@ -10,7 +10,9 @@ greetingsArray[3] = "Muy buenas";
 greetingsArray[4] = "Hola holita vecinitos";
 
 local function eventHandler(self, event, ...)
+  if useGreetings then
     SendChatMessage(greetingsArray[math.random(0, #greetingsArray)], "GUILD");
+  end
 end
 
 frame:SetScript("OnEvent", eventHandler);

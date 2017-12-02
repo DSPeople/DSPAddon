@@ -2,6 +2,7 @@
 ## Title: DSP Addon
 ## Author: DSP
 ## Version: 0.1
+## SavedVariables: firstConfig
 
-code\greetings.lua
+core.lua
 code\shutUp.lua

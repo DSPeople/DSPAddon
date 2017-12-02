@@ -4,5 +4,4 @@ RMDIR /S /Q %addonsPath%\DSPAddon
 MKDIR %addonsPath%\DSPAddon
 XCOPY /s .\*.* %addonsPath%\DSPAddon
 DEL /S /Q %addonsPath%\DSPAddon\*.bat
-
-PAUSE
+DEL /S /Q %addonsPath%\DSPAddon\*.txt

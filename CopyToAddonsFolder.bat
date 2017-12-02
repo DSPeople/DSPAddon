@@ -1,4 +1,5 @@
-SET addonsPath="D:\World of Warcraft\Interface\AddOns"
+SET addonsPath="D:\World of Warcraft\Interface\AddOns" REM Ruta de Saix
+REM SET addonsPath="C:\Program Files (x86)\World of Warcraft\Interface\AddOns" REM Ruta de Basch
 
 RMDIR /S /Q %addonsPath%\DSPAddon
 MKDIR %addonsPath%\DSPAddon

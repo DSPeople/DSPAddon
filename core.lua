@@ -7,6 +7,8 @@ local function eventHandler(self, event, ...)
   local eventName = ...;
 
   if event == "ADDON_LOADED" and eventName == "DSPAddon" then
+    greetingsCheckButton:SetChecked(useGreetings);
+    shutUpCheckButton:SetChecked(useShutUp);
     if not firstConfig then
       ShowConfig();
       -- firstConfig = true;

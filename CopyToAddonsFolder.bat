@@ -5,3 +5,4 @@ MKDIR %addonsPath%\DSPAddon
 XCOPY /s .\*.* %addonsPath%\DSPAddon
 DEL /S /Q %addonsPath%\DSPAddon\*.bat
 DEL /S /Q %addonsPath%\DSPAddon\*.txt
+DEL /S /Q %addonsPath%\DSPAddon\*.gitignore

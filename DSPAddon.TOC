@@ -3,5 +3,5 @@
 ## Author: DSP
 ## Version: 0.1
 
-greetings.lua
-shutUp.lua
+code\greetings.lua
+code\shutUp.lua

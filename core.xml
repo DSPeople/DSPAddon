@@ -1,0 +1,30 @@
+<Ui>
+<Frame name="DSPAddonFrame" parent="UIParent" inherits="BasicFrameTemplate" hidden="false">
+  <Size x="234" y="300"/>
+  <Anchors>
+    <Anchor point="CENTER"/>
+  </Anchors>
+  <Frames>
+    <CheckButton name="greetingsCheckButton" inherits="UICheckButtonTemplate">
+      <Size x="40" y="40"/>
+      <Anchors>
+        <Anchor point="TOPLEFT">
+          <Offset>
+            <AbsDimension x="10" y="-30" />
+          </Offset>
+        </Anchor>
+      </Anchors>
+    </CheckButton>
+    <CheckButton name="shutUpCheckButton" inherits="UICheckButtonTemplate">
+      <Size x="40" y="40"/>
+      <Anchors>
+        <Anchor point="TOPLEFT">
+          <Offset>
+            <AbsDimension x="10" y="-70" />
+          </Offset>
+        </Anchor>
+      </Anchors>
+    </CheckButton>
+  </Frames>
+</Frame>
+</Ui>

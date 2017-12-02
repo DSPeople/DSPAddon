@@ -1,5 +1,5 @@
 -- Dice una frase cada vez que habla alguien
-local victimName = "Mellitharm-DunModr";
+local victimName = "Obama-DunModr";
 local frame = CreateFrame("FRAME");
 frame:RegisterEvent("CHAT_MSG_GUILD");
 

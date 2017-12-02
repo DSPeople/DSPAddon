@@ -1,7 +1,6 @@
 -- Frame para comprobar la carga del Addon
 local frame = CreateFrame("FRAME");
 frame:RegisterEvent("ADDON_LOADED");
-frame:RegisterEvent("PLAYER_LOGOUT");
 
 local function eventHandler(self, event, ...)
   local eventName = ...;

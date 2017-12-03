@@ -2,9 +2,10 @@
 ## Title: DSP Addon
 ## Author: DSP
 ## Version: 0.1
-## SavedVariables: firstConfig, useGreetings, useShutUp
+## SavedVariables: firstConfig, useGreetings, useShutUp, useItemCounter
 
 core.xml
 core.lua
 code\greetings.lua
 code\shutUp.lua
+code\itemCounter.lua

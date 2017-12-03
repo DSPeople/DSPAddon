@@ -8,6 +8,7 @@ local function eventHandler(self, event, ...)
   if event == "ADDON_LOADED" and eventName == "DSPAddon" then
     greetingsCheckButton:SetChecked(useGreetings);
     shutUpCheckButton:SetChecked(useShutUp);
+    itemCounterCheckButton:SetChecked(useItemCounter);
     if not firstConfig then
       ShowConfig();
       -- firstConfig = true;
@@ -28,6 +29,8 @@ local function CheckButtonOnClick(self, button, ...)
     useGreetings = greetingsCheckButton:GetChecked();
   elseif self == shutUpCheckButton then
     useShutUp = shutUpCheckButton:GetChecked();
+  elseif self == itemCounterCheckButton then
+    useItemCounter = itemCounterCheckButton:GetChecked();
   end
 end
 
@@ -36,3 +39,6 @@ getglobal(greetingsCheckButton:GetName() .. "Text"):SetText("Greetings");
 
 shutUpCheckButton:SetScript("OnClick", CheckButtonOnClick);
 getglobal(shutUpCheckButton:GetName() .. "Text"):SetText("Shut Up");
+
+itemCounterCheckButton:SetScript("OnClick", CheckButtonOnClick);
+getglobal(itemCounterCheckButton:GetName() .. "Text"):SetText("Item Counter");

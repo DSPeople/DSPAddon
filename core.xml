@@ -25,6 +25,16 @@
         </Anchor>
       </Anchors>
     </CheckButton>
+    <CheckButton name="itemCounterCheckButton" inherits="UICheckButtonTemplate">
+      <Size x="40" y="40"/>
+      <Anchors>
+        <Anchor point="TOPLEFT">
+          <Offset>
+            <AbsDimension x="10" y="-110" />
+          </Offset>
+        </Anchor>
+      </Anchors>
+    </CheckButton>
   </Frames>
 </Frame>
 </Ui>

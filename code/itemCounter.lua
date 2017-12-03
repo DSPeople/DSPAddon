@@ -1,3 +1,5 @@
+local textFrame;
+local itemID = 124124;
 local frame = CreateFrame("FRAME");
 frame:RegisterEvent("ADDON_LOADED");
 
@@ -5,7 +7,7 @@ local function eventHandler(self, event, ...)
   local eventName = ...;
 
   if useItemCounter and eventName == "DSPAddon" then
-    local countTotal = GetItemCount(124124, true);
+    local countTotal = GetItemCount(itemID, true);
     local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(124124);
 
     -- Frame para mostrar los nuevos items
@@ -38,7 +40,7 @@ local function eventHandler(self, event, ...)
     iconFrame:Show();
 
     -- Frame para el texto del item
-    local textFrame = CreateFrame("FRAME", "Text", itemsFrame);
+    textFrame = CreateFrame("FRAME", "Text", itemsFrame);
     textFrame:SetFrameStrata("MEDIUM");
     textFrame:SetWidth(50);
     textFrame:SetHeight(13);
@@ -54,3 +56,13 @@ local function eventHandler(self, event, ...)
 end
 
 frame:SetScript("OnEvent", eventHandler);
+
+local updateFrame = CreateFrame("FRAME");
+updateFrame:RegisterEvent("BAG_UPDATE");
+
+local function updateEventHandler(self, event, ...)
+  local countTotal = GetItemCount(itemID, true);
+  textFrame.text:SetText(countTotal);
+end
+
+updateFrame:SetScript("OnEvent", updateEventHandler);

@@ -2,8 +2,12 @@
 local frame = CreateFrame("FRAME");
 frame:RegisterEvent("ADDON_LOADED");
 
-local DSP_firstConfigDefaults = false;
+-- Función que se encarga de mostrar el cuadro de configuración
+local function ShowConfig()
+  DSPAddonFrame:Show();
+end
 
+-- Handler para la carga del Addon
 local function eventHandler(self, event, ...)
   local eventName = ...;
 
@@ -11,7 +15,13 @@ local function eventHandler(self, event, ...)
     greetingsCheckButton:SetChecked(useGreetings);
     shutUpCheckButton:SetChecked(useShutUp);
     itemCounterCheckButton:SetChecked(useItemCounter);
-    DSP_firstConfig = DSP_firstConfig or DSP_firstConfigDefaults;
+
+    if DSP_firstConfig == nil then
+      DSP_firstConfig = false;
+    else
+      DSP_firstConfig = DSP_firstConfig;
+    end
+    
     DSPAddonFrame:Hide();
     if not DSP_firstConfig then
       DSP_firstConfig = true;
@@ -21,12 +31,6 @@ local function eventHandler(self, event, ...)
 end
 
 frame:SetScript("OnEvent", eventHandler);
-
-
--- Función que se encarga de mostrar el cuadro de configuración
-local function ShowConfig()
-  DSPAddonFrame:Show();
-end
 
 
 -- Función que se ejecuta cuando se hace click en los CheckButton del cuadro de configuración

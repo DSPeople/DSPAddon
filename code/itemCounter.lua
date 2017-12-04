@@ -1,4 +1,5 @@
 local textFrame;
+local texture;
 local itemID = 124124;
 local frame = CreateFrame("FRAME");
 frame:RegisterEvent("ADDON_LOADED");
@@ -8,7 +9,7 @@ local function eventHandler(self, event, ...)
 
   if useItemCounter and eventName == "DSPAddon" then
     local countTotal = GetItemCount(itemID, true);
-    local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(124124);
+    local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(itemID);
 
     -- Frame para mostrar los nuevos items
     local itemsFrame = CreateFrame("FRAME", "BackpackItemQuantityFrame", BackpackTokenFrame);
@@ -31,10 +32,10 @@ local function eventHandler(self, event, ...)
     iconFrame:SetWidth(13);
     iconFrame:SetHeight(13);
     -- Textura para el icono del item
-    local t = iconFrame:CreateTexture(nil,"BACKGROUND");
-    t:SetTexture(itemTexture);
-    t:SetAllPoints(iconFrame);
-    iconFrame.texture = t;
+    texture = iconFrame:CreateTexture(nil,"BACKGROUND");
+    texture:SetTexture(itemTexture);
+    texture:SetAllPoints(iconFrame);
+    iconFrame.texture = texture;
     
     iconFrame:SetPoint("LEFT",15,0);
     iconFrame:Show();
@@ -62,7 +63,9 @@ updateFrame:RegisterEvent("BAG_UPDATE");
 
 local function updateEventHandler(self, event, ...)
   local countTotal = GetItemCount(itemID, true);
+  local itemName, itemLink, itemRarity, itemLevel, itemMinLevel, itemType, itemSubType, itemStackCount, itemEquipLoc, itemTexture, itemSellPrice = GetItemInfo(itemID);
   textFrame.text:SetText(countTotal);
+  texture:SetTexture(itemTexture);
 end
 
 updateFrame:SetScript("OnEvent", updateEventHandler);
